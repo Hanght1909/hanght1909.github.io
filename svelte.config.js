@@ -13,10 +13,7 @@ const config = {
 			trailingSlash: 'always',
 			precompress: false,
 			strict: false
-		}),
-		paths: {
-			base: process.argv.includes('dev') ? '' : process.env.BASE_PATH
-		}
+		})
 	}
 };
 
