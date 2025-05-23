@@ -1,5 +1,6 @@
 <div class="w-full p-10">
     <h1 class="font-bold text-2xl">Hồ Hằng</h1>
+    <h2>HR at Teko</h2>
     <h2 class="font-bold text-xl">* Urgent:</h2>
     <p>- [Hà Nội] Devops/SRE, Mobile, Back-end, BA,...</p>
     <p>- [Đà Nẵng] Software Engineer, Data Science Intern/Fresher</p>
