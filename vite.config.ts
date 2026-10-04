@@ -1,7 +1,18 @@
+import { defineConfig } from 'vitest/config';
+import compiled from '@compiled/vite-plugin';
+import react from '@vitejs/plugin-react';
 import tailwindcss from '@tailwindcss/vite';
-import { sveltekit } from '@sveltejs/kit/vite';
-import { defineConfig } from 'vite';
-
 export default defineConfig({
-	plugins: [tailwindcss(), sveltekit()]
+  base: '/',
+  plugins: [
+    compiled({ transformerBabelPlugins: [['@atlaskit/tokens/babel-plugin']], extract: true }),
+    react(),
+    tailwindcss(),
+  ],
+  test: {
+    include: ['src/**/*.test.{ts,tsx}'],
+    environment: 'jsdom',
+    setupFiles: './src/test/setup.ts',
+    css: false,
+  },
 });
