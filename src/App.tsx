@@ -29,7 +29,7 @@ export default function App() {
               h<span>.</span>
             </span>
             <span>
-              Hồ Thị Hằng<span className="identity-sub">HUMAN RESOURCES</span>
+              Hồ Thị Hằng<span className="identity-sub">NHÂN SỰ & KẾT NỐI</span>
             </span>
           </a>
           <nav className="desktop-nav" aria-label="Điều hướng chính">
@@ -49,7 +49,7 @@ export default function App() {
                 aria-controls="mobile-menu"
                 onClick={() => setMenuOpen(!menuOpen)}
               >
-                {menuOpen ? 'Đóng' : 'Menu'}
+                {menuOpen ? 'Đóng' : 'Mục lục'}
               </Button>
             </span>
           </div>
@@ -68,7 +68,7 @@ export default function App() {
         <section className="hero shell" id="about" aria-labelledby="hero-title">
           <div className="hero-copy">
             <div className="eyebrow">
-              <span className="small-line" /> PEOPLE · PURPOSE · POSSIBILITIES
+              <span className="small-line" /> THẤU HIỂU · CHỈN CHU · ĐỒNG HÀNH
             </div>
             <h1 id="hero-title">
               Bắt đầu từ
@@ -79,12 +79,13 @@ export default function App() {
               Xin chào, mình là <strong>{profile.name}.</strong>
             </p>
             <p className="hero-description">
-              Mình theo đuổi công việc nhân sự — nơi sự thấu hiểu gặp tính chỉn chu, và mỗi kết nối
-              mở ra một khả năng mới.
+              Mình có kinh nghiệm thực tế trong tuyển dụng, vận hành nhân sự, hỗ trợ phúc lợi và tổ
+              chức hoạt động nội bộ. Từ chào đón đồng nghiệp mới đến cải tiến quy trình hằng ngày,
+              mình góp phần để công việc trôi chảy và con người được hỗ trợ.
             </p>
             <div className="flex flex-wrap gap-3 hero-buttons">
               <LinkButton href="#expertise" appearance="primary">
-                Khám phá định hướng <Arrow />
+                Khám phá chuyên môn <Arrow />
               </LinkButton>
               <LinkButton
                 href={profile.linkedin}
@@ -96,30 +97,30 @@ export default function App() {
               </LinkButton>
             </div>
             <div className="hero-footnote">
-              <span className="status-dot" /> Human Resources <span aria-hidden="true">/</span> Hồ
-              sơ cá nhân
+              <span className="status-dot" /> Nhân sự <span aria-hidden="true">/</span> Hồ sơ cá
+              nhân
             </div>
           </div>
           <div className="hero-art" aria-label="Minh họa kết nối các lĩnh vực nhân sự">
             <div className="art-grid" />
             <div className="art-orbit orbit-one" />
             <div className="art-orbit orbit-two" />
-            <div className="art-label">THE HUMAN SIDE OF WORK</div>
+            <div className="art-label">GÓC NHÌN TỪ CON NGƯỜI</div>
             <div className="people-card">
               <span className="card-micro">MỘT GÓC NHÌN</span>
               <span className="art-word">
-                People
+                Con người
                 <br />
-                <i>first.</i>
+                <i>là gốc.</i>
               </span>
               <span className="card-rule" />
               <span className="card-caption">Thấu hiểu. Kết nối. Đồng hành.</span>
             </div>
-            <span className="floating-note note-blue">↗&nbsp; Talent & opportunity</span>
-            <span className="floating-note note-green">✳&nbsp; Culture & connection</span>
+            <span className="floating-note note-blue">↗&nbsp; Nhân tài & cơ hội</span>
+            <span className="floating-note note-green">✳&nbsp; Văn hóa & kết nối</span>
             <div className="art-bottom">
               <span>HỒ THỊ HẰNG</span>
-              <span>HR PORTFOLIO — 01</span>
+              <span>HỒ SƠ NHÂN SỰ — 01</span>
             </div>
           </div>
         </section>
@@ -136,7 +137,7 @@ export default function App() {
         <section className="section shell" id="expertise" aria-labelledby="expertise-title">
           <div className="section-heading">
             <div>
-              <p className="eyebrow">01 / ĐỊNH HƯỚNG CHUYÊN MÔN</p>
+              <p className="eyebrow">01 / LĨNH VỰC CHUYÊN MÔN</p>
               <h2 id="expertise-title">
                 Năm góc nhìn.
                 <br />
@@ -144,8 +145,8 @@ export default function App() {
               </h2>
             </div>
             <p>
-              Những lĩnh vực mình muốn tập trung và phát triển — cùng một điểm chung: trải nghiệm
-              của con người.
+              Năm mảng công việc kết nối với nhau — từ vận hành hằng ngày đến những trải nghiệm giúp
+              đồng nghiệp cảm thấy được quan tâm.
             </p>
           </div>
           <div className="expertise-panel">
@@ -163,7 +164,7 @@ export default function App() {
                       <span> / 05</span>
                     </div>
                     <div>
-                      <Lozenge appearance="inprogress">Định hướng</Lozenge>
+                      <Lozenge appearance="inprogress">Kinh nghiệm thực tế</Lozenge>
                       <h3>{p.name}</h3>
                       <p className="pillar-summary">{p.description}</p>
                       <p className="muted">{p.detail}</p>
@@ -197,7 +198,7 @@ export default function App() {
                 được.
               </p>
             </div>
-            {stories.length ? (
+            {
               <div className="story-grid">
                 {stories.map((story) => (
                   <article className="story-card" key={story.id}>
@@ -208,30 +209,13 @@ export default function App() {
                       <dd>{story.context}</dd>
                       <dt>Đóng góp</dt>
                       <dd>{story.contribution}</dd>
-                      <dt>Kết quả & bài học</dt>
+                      <dt>Giá trị đóng góp</dt>
                       <dd>{story.outcome}</dd>
                     </dl>
                   </article>
                 ))}
               </div>
-            ) : (
-              <div className="story-placeholder">
-                <div className="story-symbol" aria-hidden="true">
-                  ↗
-                </div>
-                <div>
-                  <Lozenge>Đang hoàn thiện</Lozenge>
-                  <h3>Mỗi dấu ấn đều cần một câu chuyện thật.</h3>
-                  <p>
-                    Các dự án và đóng góp cụ thể sẽ được bổ sung sau khi xác nhận nội dung có thể
-                    chia sẻ.
-                  </p>
-                </div>
-                <span className="story-index" aria-hidden="true">
-                  01 — 03
-                </span>
-              </div>
-            )}
+            }
           </div>
         </section>
         <section
@@ -252,13 +236,11 @@ export default function App() {
           </div>
           <div className="timeline">
             {experience.map((item) => (
-              <article key={item.organization}>
+              <article key={item.title}>
                 <div className="timeline-dot" />
-                <p className="eyebrow">KINH NGHIỆM ĐƯỢC GIỚI THIỆU</p>
-                <h3>{item.organization}</h3>
-                <p className="role-title">{item.role}</p>
-                <p className="muted">{item.note}</p>
-                <span className="timeline-caption">Nguồn: hồ sơ cá nhân công khai</span>
+                <p className="eyebrow">{item.label}</p>
+                <h3>{item.title}</h3>
+                <p className="muted">{item.description}</p>
               </article>
             ))}
           </div>
@@ -276,8 +258,8 @@ export default function App() {
                 <span className="serif">Một kết nối mới.</span>
               </h2>
               <p>
-                Trao đổi về công việc nhân sự, một ý tưởng hợp tác,
-                <br className="desktop-break" /> hoặc đơn giản là câu chuyện của bạn.
+                Cùng trao đổi về nhân sự, tuyển dụng, hỗ trợ phúc lợi,
+                <br className="desktop-break" /> văn hóa học tập và tổ chức sự kiện.
               </p>
             </div>
             <div className="contact-actions">
@@ -297,10 +279,10 @@ export default function App() {
       </main>
       <footer className="shell footer">
         <span>
-          Hồ Thị Hằng <span className="muted">/ Human Resources</span>
+          Hồ Thị Hằng <span className="muted">/ Nhân sự</span>
         </span>
         <a href="#">Về đầu trang ↑</a>
-        <span className="footer-note">Made with care. Built around people.</span>
+        <span className="footer-note">Chỉn chu trong công việc. Bắt đầu từ con người.</span>
       </footer>
     </>
   );

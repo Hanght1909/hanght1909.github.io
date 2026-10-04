@@ -443,7 +443,7 @@ h3 {
 }
 .story-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 24px;
 }
 .story-card {
@@ -823,4 +823,31 @@ dd {
 .contact-button-surface {
   background: var(--ds-surface, #fff);
   border-radius: var(--ds-border-radius, 4px);
+}
+
+.timeline article + article {
+  margin-top: 34px;
+}
+.timeline h3 {
+  font-size: 23px;
+}
+.art-word {
+  font-size: 44px;
+  letter-spacing: -2px;
+}
+@media (max-width: 760px) {
+  .art-word {
+    font-size: 35px;
+  }
+  .story-grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 360px) {
+  .art-word {
+    font-size: 29px;
+  }
+  .identity-sub {
+    font-size: 6px;
+  }
 }

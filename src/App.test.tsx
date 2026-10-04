@@ -13,23 +13,26 @@ describe('portfolio', () => {
   it('supports keyboard tab navigation', async () => {
     const user = userEvent.setup();
     render(<App />);
-    const tab = screen.getByRole('tab', { name: 'HR' });
+    const tab = screen.getByRole('tab', { name: 'Nhân sự' });
     tab.focus();
     await user.keyboard('{ArrowRight}');
-    expect(screen.getByRole('tab', { name: 'C&B' })).toHaveAttribute('aria-selected', 'true');
-    expect(screen.getByRole('heading', { name: 'Compensation & Benefits' })).toBeVisible();
+    expect(screen.getByRole('tab', { name: 'C&B & phúc lợi' })).toHaveAttribute(
+      'aria-selected',
+      'true',
+    );
+    expect(screen.getByRole('heading', { name: 'Hỗ trợ C&B & phúc lợi' })).toBeVisible();
   });
   it('opens mobile navigation and closes after selection', async () => {
     const user = userEvent.setup();
     render(<App />);
-    await user.click(screen.getByRole('button', { name: 'Menu' }));
+    await user.click(screen.getByRole('button', { name: 'Mục lục' }));
     const nav = screen.getByRole('navigation', { name: 'Điều hướng di động' });
     await user.click(within(nav).getByRole('link', { name: 'Chuyên môn' }));
     expect(
       screen.queryByRole('navigation', { name: 'Điều hướng di động' }),
     ).not.toBeInTheDocument();
   });
-  it('uses verified contact destinations and honest story placeholder', () => {
+  it('uses approved contact destinations and four complete work stories', () => {
     render(<App />);
     expect(screen.getByRole('link', { name: new RegExp(profile.email) })).toHaveAttribute(
       'href',
@@ -39,6 +42,12 @@ describe('portfolio', () => {
       'href',
       profile.linkedin,
     );
-    if (!stories.length) expect(screen.getByText('Đang hoàn thiện')).toBeVisible();
+    expect(stories).toHaveLength(4);
+    expect(document.body.textContent).not.toMatch(
+      /Đang hoàn thiện|sau khi xác nhận|Nguồn:|2023–Present|đánh giá hiệu suất/i,
+    );
+    for (const story of stories)
+      expect(screen.getByRole('heading', { name: story.title })).toBeVisible();
+    expect(screen.queryByText('Đang hoàn thiện')).not.toBeInTheDocument();
   });
 });

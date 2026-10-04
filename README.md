@@ -26,7 +26,7 @@ npm run test:e2e
 
 ## Content boundary
 
-The initial baseline contains only the original public profile (HR at Teko, name and contact links), plus owner-requested focus areas. Focus descriptions are editorial direction, not claims of achieved expertise. No dates, metrics, testimonials, portraits or completed projects are invented. Stories remain empty until approved publishable summaries are supplied. Never commit private performance reviews or source documents. All first-person editorial copy needs owner approval before publication.
+Content is maintained in src/content.ts: five professional focus areas and four selected-work stories. The 2023–2025 label is a selected-work window, not employment tenure. C&B is presented as benefits and administrative support, not payroll ownership. Teko is historical work context, not a claim of current employment. The LinkedIn destination is owner-supplied; profile contents are not independently verified. No fabricated metrics, endorsements, formal titles, dates or portraits are included. Changes to personal claims require owner approval.
 
 ## ADS compatibility and licensing
 
